@@ -1,0 +1,7 @@
+结果复现步骤
+1. 拉取基础镜像，docker pull registry.us-west-1.aliyuncs.com/tcc-public/python:3
+2. 利用基础镜像在当前工作目录构建新的镜像，eg： docker build -t ccks_baoxian:v1 .
+3. 将测试文件放到本地目录/data
+4. 执行如下脚本进行结果信息抽取 docker run -v /data:/tcdata ccks_baoxian:v1 sh run.sh
+5. 生成的结果文件位于镜像内/tcdata（可在镜像外映射目录/data获取，为方便结果复现校验，如需与比赛时目录相同，可自行修改代码或联系我）
+
